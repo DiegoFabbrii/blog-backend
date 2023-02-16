@@ -14,7 +14,7 @@ class CreateUserController {
       });
 
       return res.status(201).json({ message: 'Usuário criado com sucesso' });
-    } catch (error: unknown) {
+    } catch (error) {
       if (error instanceof Error)
         return res.status(500).json({ error: error.message });
     }
