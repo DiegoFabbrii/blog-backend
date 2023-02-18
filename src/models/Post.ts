@@ -5,6 +5,7 @@ const postSchema = new Schema(
     title: {
       type: String,
       required: true,
+      unique: true,
     },
 
     content: {
@@ -13,6 +14,11 @@ const postSchema = new Schema(
     },
 
     post_image: {
+      type: String,
+      required: true,
+    },
+
+    slug: {
       type: String,
       required: true,
     },
