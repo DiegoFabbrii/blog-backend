@@ -5,6 +5,7 @@ class GetAllPostsController {
   async execute(req: Request, res: Response) {
     try {
       const posts = await getAllPostsService.execute();
+
       return res.status(200).json(posts);
     } catch (error) {
       if (error instanceof Error)

@@ -3,6 +3,7 @@ import { getAllPostsRepository } from '../../repositories/posts/GetAllPostsRepos
 class GetAllPostsService {
   async execute() {
     const posts = await getAllPostsRepository.execute();
+
     return posts;
   }
 }
