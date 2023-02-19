@@ -23,12 +23,13 @@ const postSchema = new Schema(
       required: true,
     },
 
-    user_id: {
+    user: {
       type: Schema.Types.ObjectId,
       required: true,
+      ref: 'User',
     },
 
-    category_id: {
+    category: {
       type: Schema.Types.ObjectId,
       ref: 'Category',
     },
