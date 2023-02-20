@@ -3,11 +3,13 @@ import { findCategoryRepository } from '../../repositories/categories/FindCatego
 
 class CreateCategoryService {
   async execute(name: string) {
-    const existedCategory = await findCategoryRepository.execute(name);
+    const existedCategory = await findCategoryRepository.execute(
+      name.toLowerCase()
+    );
 
     if (existedCategory) throw new Error('Categoria informada já existe');
 
-    return await createCategoryRepository.execute(name);
+    return await createCategoryRepository.execute(name.toLowerCase());
   }
 }
 
