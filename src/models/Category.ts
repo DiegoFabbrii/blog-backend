@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import { ICategory } from '../interfaces/category/ICategory';
 
 const categorySchema = new Schema({
   name: {
@@ -8,6 +9,6 @@ const categorySchema = new Schema({
   },
 });
 
-const Category = model('Category', categorySchema);
+const Category = model<ICategory>('Category', categorySchema);
 
 export { Category };

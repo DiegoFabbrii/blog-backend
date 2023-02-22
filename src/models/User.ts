@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
 import { hash } from 'bcrypt';
+import { IUser } from '../interfaces/user/IUser';
 
 const userSchema = new Schema({
   username: {
@@ -30,6 +31,6 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-const User = model('User', userSchema);
+const User = model<IUser>('User', userSchema);
 
 export { User };

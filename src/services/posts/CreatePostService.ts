@@ -11,7 +11,9 @@ class CreatePostService {
         'Título escolhido já existe, por favor, escolha um diferente'
       );
 
-    return await createPostRepository.execute(post);
+    const slug = post.title.replaceAll(' ', '-').toLowerCase();
+
+    return await createPostRepository.execute({ ...post, slug });
   }
 }
 

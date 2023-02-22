@@ -7,8 +7,7 @@ class CreatePostController {
     const userId = req.userId;
 
     try {
-      const slug = data.title.replaceAll(' ', '-');
-      await createPostService.execute({ ...data, user: userId, slug });
+      await createPostService.execute({ ...data, user: userId });
       return res.status(201).json({ message: 'Post criado com sucesso' });
     } catch (error) {
       if (error instanceof Error) {
