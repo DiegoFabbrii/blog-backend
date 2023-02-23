@@ -1,4 +1,3 @@
-import { IUser } from '../../interfaces/user/IUser';
 import { getAllPostsRepository } from '../../repositories/posts/GetAllPostsRepository';
 
 class GetAllPostsService {
@@ -21,13 +20,6 @@ class GetAllPostsService {
     }));
 
     return data;
-  }
-
-  private _isUser(obj: IUser) {
-    const username = obj.username;
-    const avatar_image = obj.avatar_image;
-
-    return typeof username === 'string' && typeof avatar_image === 'string';
   }
 }
 

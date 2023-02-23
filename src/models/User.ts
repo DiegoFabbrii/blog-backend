@@ -31,6 +31,23 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+// userSchema.pre('updateOne', async function (this: any, next) {
+//   const hashedPassword = await hash(this.getUpdate().password, 10);
+//   const update = this._update;
+
+//   if (update.password) {
+//     update.password = hashedPassword;
+//   }
+//   if (update.username) {
+//     update.username = update.username.toLowerCase();
+//   }
+//   if (update.email) {
+//     this.email = update.email.ToLowerCase();
+//   }
+
+//   next();
+// });
+
 const User = model<IUser>('User', userSchema);
 
 export { User };
