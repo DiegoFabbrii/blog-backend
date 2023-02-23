@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { deleteUserController } from '../../controllers/users/DeleteUser.Controller';
 import { updateUserController } from '../../controllers/users/UpdateUserController';
 import { authMiddleware } from '../../middlewares/authMiddleware';
 
@@ -10,6 +11,10 @@ usersRoute.patch(
   authMiddleware,
   updateUserController.execute
 );
-usersRoute.delete('/user/delete/:id');
+usersRoute.delete(
+  '/user/delete/:id',
+  authMiddleware,
+  deleteUserController.execute
+);
 
 export { usersRoute };

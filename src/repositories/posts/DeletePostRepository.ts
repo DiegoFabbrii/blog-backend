@@ -2,7 +2,7 @@ import { Post } from '../../models/Post';
 
 class DeletePostRepository {
   async execute(id: string) {
-    await Post.findByIdAndDelete(id);
+    return await Post.findByIdAndDelete(id);
   }
 }
 
